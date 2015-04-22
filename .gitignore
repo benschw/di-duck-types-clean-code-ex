@@ -3,4 +3,4 @@ default/build
 di/discover
 di/build
 duck/discover
-server/server
+greeting/greeting
