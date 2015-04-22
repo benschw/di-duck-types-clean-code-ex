@@ -1,10 +1,16 @@
 package main
 
-import "flag"
+import (
+	"flag"
+
+	"github.com/benschw/opin-go/ophttp"
+)
 
 func main() {
 	bind := flag.String("bind", "0.0.0.0:8080", "address to bind http server to")
 	flag.Parse()
 
-	RunServer(*bind)
+	server := ophttp.NewServer(*bind)
+
+	RunServer(server)
 }

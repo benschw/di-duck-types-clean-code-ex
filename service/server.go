@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/benschw/opin-go/ophttp"
 	"github.com/benschw/opin-go/rest"
 )
 
@@ -12,7 +13,7 @@ func GreetingHandler(resp http.ResponseWriter, req *http.Request) {
 }
 
 // Wire and start http server
-func RunServer(bind string) {
+func RunServer(server *ophttp.Server) {
 	http.Handle("/greeting", http.HandlerFunc(GreetingHandler))
-	http.ListenAndServe(bind, nil)
+	server.Start()
 }
