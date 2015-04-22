@@ -28,6 +28,6 @@ func TestDiscover(t *testing.T) {
 
 	// then
 	if found != expected {
-		t.Errorf("\"%s\" not equal to \"%s\"", found, expected)
+		t.Errorf("%s not equal to %s", found, expected)
 	}
 }

@@ -5,17 +5,8 @@ import (
 	"testing"
 
 	"github.com/benschw/dns-clb-go/clb"
-	"github.com/benschw/dns-clb-go/dns"
 	"github.com/benschw/opin-go/rando"
 )
-
-type StaticAddressGetter struct {
-	Val dns.Address
-}
-
-func (lb *StaticAddressGetter) GetAddress(address string) (dns.Address, error) {
-	return lb.Val, nil
-}
 
 func TestDiscover(t *testing.T) {
 	//given
@@ -27,6 +18,6 @@ func TestDiscover(t *testing.T) {
 
 	// then
 	if found != expected {
-		t.Errorf("%s not equal to \"%s\"", found, expected)
+		t.Errorf("%s not equal to %s", found, expected)
 	}
 }
