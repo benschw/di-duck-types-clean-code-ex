@@ -21,7 +21,7 @@ func (lb *GreetingAddressGetter) GetAddress(address string) (dns.Address, error)
 }
 
 // Component test for greeting endpoint:
-// excercise running server with the client
+// exercise running server with the client
 func TestGreetingEndpoint(t *testing.T) {
 	// given
 	expectedGreeting := "\"hello world\""
